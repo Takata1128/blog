@@ -1,30 +1,27 @@
 import Hero from '@/components/hero'
 import Container from '@/components/container'
-import Meta from '@/components/meta'
 import { getAllPosts } from '@/lib/api'
-import { getPlaiceholder } from 'plaiceholder'
-import { getImageBuffer } from '@/lib/image-buffer'
-import Posts from '@/components/posts'
-import Pagination from '@/components/pagenation'
-import { eyecatchLocal } from '@/lib/constants'
+import Meta from '@/components/meta';
+import Posts from '@/components/posts';
+import { eyecatchLocal } from '@/lib/constants';
+import { getPlaiceholder } from 'plaiceholder';
+import { getImageBuffer } from '@/lib/image-buffer';
 
-export default function Home({ posts }) {
+export default function Blog({ posts }) {
     return (
         <Container>
-            <Meta title="home" description="home page"></Meta>
+            <Meta pageTitle="ブログ" pageDesc="記事一覧" />
             <Hero
-                title="ろか日記"
-                subtitle="自分のための日記や備忘録を書いていきます"
-                imageOn
+                title="Blog"
+                subtitle="Recent Posts"
             />
             <Posts posts={posts} />
-            <Pagination nextUrl="/blog" nextText="More Posts" />
         </Container>
     )
 }
 
 export async function getStaticProps() {
-    const posts = await getAllPosts(4);
+    const posts = await getAllPosts();
 
     for (const post of posts) {
         if (!post.hasOwnProperty('eyecatch')) {

@@ -2,6 +2,7 @@ import { getAllCategories, getAllPostsByCategory } from "@/lib/api";
 import Container from "@/components/container";
 import PostHeader from "@/components/post-header";
 import Posts from "@/components/posts";
+import Meta from "@/components/meta";
 import { getImageBuffer } from "@/lib/image-buffer";
 import { getPlaiceholder } from "plaiceholder";
 import { eyecatchLocal } from "@/lib/constants";

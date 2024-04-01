@@ -6,7 +6,6 @@ export default function Contact() {
         <div className={styles.stack}>
             <h3 className={styles.heading}>Contact</h3>
             <Social />
-            <address>backkun1128@gmail.com</address>
         </div>
     )
 }

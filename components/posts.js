@@ -8,7 +8,7 @@ export default function Posts({ posts }) {
         <div className={styles.gridContainer}>
             {posts.map((post) => (
                 <Link href={`/blog/${post.slug}`} key={post.slug}>
-                    <PostCard post={post} key={post.slug} />
+                    <PostCard post={post} />
                 </Link>
             ))}
         </div>

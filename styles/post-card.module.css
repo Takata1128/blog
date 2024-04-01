@@ -17,23 +17,26 @@
 .postCard figure {
     position: relative;
     width: 200px;
-    height: 200px;
     grid-area: pict;
 }
 
-.postCard h2 {
+.postCard .title {
     grid-area: title;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     font-size: var(--small-heading3);
 }
 
-.postCard p {
+.postCard .text {
     grid-area: text;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     font-size: 1.0rem;
+    padding: 0;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     color: gray;
-    padding: 0;
-    overflow: hidden;
 }

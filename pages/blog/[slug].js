@@ -34,7 +34,7 @@ export default function Post({
                 pageImgHeight={eyecatch.height}
             />
             <article>
-                <PostHeader title={title} subtitl="Blog Article" publish={publish} />
+                <PostHeader title={title} subtitle="Blog Article" publish={publish} />
                 <figure>
                     <Image key={eyecatch.url} src={eyecatch.url} alt="" layout="responsive" width={eyecatch.width} height={eyecatch.height} sizes="{min-width: 1152px} 1152px, 100vw" priority placeholder="blur" blurDataURL={eyecatch.blurDataURL} />
                 </figure>

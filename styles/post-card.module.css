@@ -4,14 +4,15 @@
     border: solid 1px var(--gray-10)
 }
 
-.postCard .contents {
+.contents {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto auto;
 
     grid-template-areas:
         "pict title"
         "pict text"
+        "pict publish";
 }
 
 .postCard figure {
@@ -20,23 +21,27 @@
     grid-area: pict;
 }
 
-.postCard .title {
+.title {
     grid-area: title;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     font-size: var(--small-heading3);
 }
 
-.postCard .text {
+.text {
     grid-area: text;
     display: -webkit-box;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    font-size: 1.0rem;
-    padding: 0;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    color: gray;
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    color: var(--gray-50);
+}
+
+.publish {
+    grid-area: publish;
+    color: var(--gray-50);
+    margin: 0.5rem 0.5rem 0.5rem auto;
 }

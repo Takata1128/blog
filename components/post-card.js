@@ -1,8 +1,11 @@
 import styles from '@/styles/post-card.module.css'
-import parse from 'html-react-parser'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-regular-svg-icons'
 import Image from 'next/image'
+import ConvertDate from './convert-date';
 
 export default function PostCard({ post }) {
+    console.log(post);
     return (
         <article className={styles.postCard}>
             <div className={styles.contents}>
@@ -21,6 +24,10 @@ export default function PostCard({ post }) {
                 </figure>
                 <h2 className={styles.title}>{post.title}</h2>
                 <div className={styles.text}>{removeHTMLTags(post.content)}</div>
+                <div className={styles.publish}>
+                    <FontAwesomeIcon icon={faClock} size="lg" color="var(--gray-25)" />
+                    <ConvertDate dateISO={post.createdAt} />
+                </div>
             </div>
         </article>
     )

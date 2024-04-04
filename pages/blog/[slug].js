@@ -56,15 +56,15 @@ export default function Post({
     )
 }
 
-export async function getStaticPaths() {
-    const allSlugs = await getAllSlugs();
-    return {
-        paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
-        fallback: false,
-    }
-}
+// export async function getStaticPaths() {
+//     const allSlugs = await getAllSlugs();
+//     return {
+//         paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
+//         fallback: false,
+//     }
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const slug = context.params.slug;
 
     const post = await getPostBySlug(slug);

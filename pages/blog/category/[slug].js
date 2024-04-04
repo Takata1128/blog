@@ -17,15 +17,15 @@ export default function Category({ name, posts }) {
     )
 }
 
-export async function getStaticPaths() {
-    const allCats = await getAllCategories();
-    return {
-        paths: allCats.map(({ slug }) => `/blog/category/${slug}`),
-        fallback: false,
-    }
-}
+// export async function getStaticPaths() {
+//     const allCats = await getAllCategories();
+//     return {
+//         paths: allCats.map(({ slug }) => `/blog/category/${slug}`),
+//         fallback: false,
+//     }
+// }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const catSlug = context.params.slug;
 
     const allCats = await getAllCategories();

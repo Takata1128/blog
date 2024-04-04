@@ -5,7 +5,6 @@ import Image from 'next/image'
 import ConvertDate from './convert-date';
 
 export default function PostCard({ post }) {
-    console.log(post);
     return (
         <article className={styles.postCard}>
             <div className={styles.contents}>
